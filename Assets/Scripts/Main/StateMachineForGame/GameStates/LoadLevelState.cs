@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace Main.StateMachineForGame.GameStates
 {
-    public class LoadLevelState : IExitableState
+    public class LoadLevelState : IState
     {
         private readonly GameStateMachine _gameStateMachine;
         
@@ -72,10 +72,6 @@ namespace Main.StateMachineForGame.GameStates
                cards = _gridCreateService.Create(_cardPrefab, currentGridSettings.LinesAmount, currentGridSettings.ColumnsAmount);
             
             return cards;
-        }
-
-        public void Exit()
-        {
         }
     }
 }

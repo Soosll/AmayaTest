@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Main.StateMachineForGame.GameStates
 {
-    public class UnloadLevelState : IExitableState
+    public class UnloadLevelState : IState
     {
         private readonly GameStateMachine _gameStateMachine;
 
@@ -29,15 +29,11 @@ namespace Main.StateMachineForGame.GameStates
         {
             _completeLevelsCalculateService.Clear();
             _trueKeysRemindService.Clear();
-
+            
             _staticDataService.StaticData.SceneDependencies.RestartPanel.Background.DOFade(0, 0);
             
             var coroutineRunner = _coroutineHandlerService.CoroutineRunner;
             coroutineRunner.StartCoroutine(EndGameTimer());
-        }
-
-        public void Exit()
-        {
         }
 
         private IEnumerator EndGameTimer()
