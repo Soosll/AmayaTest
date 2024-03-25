@@ -1,0 +1,10 @@
+using UnityEngine;
+
+namespace Extensions
+{
+    public static class TransformExtensions
+    {
+        public static void Activate(this Transform transform) => 
+            transform.gameObject.SetActive(true);
+    }
+}
