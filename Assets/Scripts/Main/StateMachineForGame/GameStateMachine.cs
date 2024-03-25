@@ -6,13 +6,13 @@ namespace Main.StateMachineForGame
 {
     public class GameStateMachine
     {
-        private Dictionary<Type, IExitableState> _states;
+        private Dictionary<Type, IState> _states;
 
-        private IExitableState _currentState;
+        private IState _currentState;
 
         public void Init(LoadLevelState loadLevelState, GameLoopState gameLoopState, UnloadLevelState unloadLevelState)
         {
-            _states = new Dictionary<Type, IExitableState>()
+            _states = new Dictionary<Type, IState>()
             {
                 [typeof(LoadLevelState)] = loadLevelState,
                 [typeof(GameLoopState)] = gameLoopState,
@@ -20,9 +20,8 @@ namespace Main.StateMachineForGame
             };
         }
 
-        public void Enter<TState>() where TState : IExitableState
+        public void Enter<TState>() where TState : IState
         {
-            _currentState?.Exit();
             var newState = _states[typeof(TState)];
             _currentState = newState;
             _currentState.Enter();

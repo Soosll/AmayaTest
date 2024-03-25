@@ -1,3 +1,4 @@
+using System;
 using DG.Tweening;
 using Extensions;
 using Main.StateMachineForGame;
@@ -8,6 +9,8 @@ namespace Services
 {
     public class WinCheckService : IWinCheckService
     {
+        public event Action OnRunNextLevel; 
+
         private readonly GameStateMachine _gameStateMachine;
         
         private readonly IStaticDataService _staticDataService;
@@ -27,9 +30,7 @@ namespace Services
             _presenters = presenters;
 
             foreach (var presenter in _presenters)
-            {
                 presenter.OnTrueKeyWasChosen += RunNextLevel;
-            }
         }
 
         public void RunNextLevel()
@@ -38,12 +39,15 @@ namespace Services
             
             if (_completeLevelsCalculateService.GetAmount() < _staticDataService.StaticData.GridsSettingsData.Length)
             {
+                OnRunNextLevel?.Invoke();
                 _gameStateMachine.Enter<LoadLevelState>();
                 return;                
             }
 
             var restartPanel = _staticDataService.StaticData.SceneDependencies.RestartPanel;
             
+            OnRunNextLevel?.Invoke();
+
             restartPanel.transform.Activate();
             restartPanel.Background.DOFade(0.8f, 1);
         }

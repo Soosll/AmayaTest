@@ -4,9 +4,4 @@ namespace Main.StateMachineForGame.GameStates
     {
         public void Enter();
     }
-
-    public interface IExitableState : IState
-    {
-        public void Exit();
-    }
 }
