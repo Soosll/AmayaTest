@@ -28,8 +28,8 @@ namespace UI.View
 
         private void SetView()
         {
-            if(_sprite.rect.width > _sprite.rect.height)
-                _card.SpriteContainer.transform.Rotate(0,0,-90);
+            if (_sprite.border.x != 0)
+                _card.SpriteContainer.transform.Rotate(0,0,-90); 
 
             _card.SpriteContainer.sprite = _sprite;
         }

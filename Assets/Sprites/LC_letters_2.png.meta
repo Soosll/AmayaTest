@@ -266,12 +266,12 @@ TextureImporter:
       name: LC_letters_2_6
       rect:
         serializedVersion: 2
-        x: 658
-        y: 382
-        width: 339
-        height: 341
+        x: 633
+        y: 392
+        width: 387
+        height: 316
       alignment: 9
-      pivot: {x: 0.49697492, y: 0.4469414}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:

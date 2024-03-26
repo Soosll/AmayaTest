@@ -194,8 +194,8 @@ TextureImporter:
       name: SD_NC_Cookies_1_3
       rect:
         serializedVersion: 2
-        x: 748
-        y: 619
+        x: 746
+        y: 620
         width: 273
         height: 400
       alignment: 0
@@ -236,7 +236,7 @@ TextureImporter:
       name: SD_NC_Cookies_1_5
       rect:
         serializedVersion: 2
-        x: 313
+        x: 312
         y: 220
         width: 298
         height: 399
@@ -261,9 +261,9 @@ TextureImporter:
         y: 345
         width: 396
         height: 274
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      alignment: 9
+      pivot: {x: 0.51, y: 0.5}
+      border: {x: 1, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -284,7 +284,7 @@ TextureImporter:
         height: 269
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 1, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
